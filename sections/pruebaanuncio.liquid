@@ -39,21 +39,13 @@
   }
   {% endschema %}
   
-  <style>
-    .custom-announcement-container {
-      display: flex;
-      justify-content: center; /* Centra horizontalmente */
-      align-items: center; /* Centra verticalmente */
-      height: 100vh; /* Altura total de la ventana */
-      background-color: {{ settings.background_color }};
-      color: {{ settings.text_color }};
-      font-size: {{ settings.font_size }}px;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
-  
-  <div class="custom-announcement-container">
+  <div style="
+    background-color: {{ settings.background_color }};
+    color: {{ settings.text_color }};
+    font-size: {{ settings.font_size }}px;
+    padding: 20px;
+    text-align: center;
+  ">
     {{ settings.editable_text | escape }}
   </div>
   

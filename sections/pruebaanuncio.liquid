@@ -4,13 +4,13 @@
     "settings": [
       {
         "type": "color",
-        "id": "anuncio_color",
+        "id": "background_color",
         "label": "Color del fondo",
         "default": "#ffffff"
       },
       {
         "type": "color",
-        "id": "anuncio2_color",
+        "id": "text_color",
         "label": "Color del texto",
         "default": "#000000"
       },
@@ -32,23 +32,24 @@
     ],
     "presets": [
       {
-        "name": "Prueba Anuncio",
+        "name": "Anuncio",
         "category": "Anuncios"
       }
     ]
   }
   {% endschema %}
   
-  <div style="
-    background-color: {{ settings.anuncio_color }};
-    color: {{ settings.anuncio2_color }};
+  <style>
+    .custom-announcement {
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+  
+  <div class="custom-announcement" style="
+    background-color: {{ settings.background_color }};
+    color: {{ settings.text_color }};
     font-size: {{ settings.font_size }}px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
   ">
     {{ settings.editable_text | escape }}
   </div>

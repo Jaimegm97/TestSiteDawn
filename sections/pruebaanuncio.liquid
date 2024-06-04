@@ -1,53 +1,62 @@
 {% schema %}
-    {
-      "name": "Custom Text Section",
-      "settings": [
-        {
-          "type": "color",
-          "id": "background_color",
-          "label": "Color del fondo",
-          "default": "#ffffff"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Color del texto",
-          "default": "#000000"
-        },
-        {
-          "type": "number",
-          "id": "font_size",
-
-          "label": "Tamaño de la fuente",
-          "default": 16
-        },
-        {
-          "type": "text",
-          "id": "editable_text",
-          "label": "Text",
-          "default": "Escriba aqui su texto"
-        }
-      ],
-      "presets": [
-        {
-          "name": "Custom Text Section",
-          "category": "Text"
-        }
-      ]
-    }
-    {% endschema %}
-    
-    <div style="
-      background-color: {{ settings.background_color }};
-      color: {{ settings.text_color }};
-      font-size: {{ settings.font_size }}px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    ">
-      {{ settings.text_content }}
-    </div>
-    
+  {
+    "name": "Custom Text Section",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Color del fondo",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Color del texto",
+        "default": "#000000"
+      },
+      {
+        "type": "number",
+        "id": "font_size",
+        "label": "Tamaño de la fuente",
+        "default": 16
+      },
+      {
+        "type": "text",
+        "id": "editable_text",
+        "label": "Texto",
+        "default": "Escriba aquí su texto"
+      },
+      {
+        "type": "checkbox",
+        "id": "bold_text",
+        "label": "Texto en negrita",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Text Section",
+        "category": "Text"
+      }
+    ]
+  }
+  {% endschema %}
+  
+  <div style="
+    background-color: {{ settings.background_color }};
+    color: {{ settings.text_color }};
+    font-size: {{ settings.font_size }}px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: {{ settings.bold_text ? 'bold' : 'normal' }};
+  ">
+    {% if settings.bold_text %}
+      <strong>{{ settings.editable_text }}</strong>
+    {% else %}
+      {{ settings.editable_text }}
+    {% endif %}
+  </div>

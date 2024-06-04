@@ -4,7 +4,7 @@
     "settings": [
       {
         "type": "color",
-        "id": "background_color",
+        "id": "background",
         "label": "Color del fondo",
         "default": "#ffffff"
       },
@@ -40,7 +40,7 @@
   {% endschema %}
   
   <div style="
-    background-color: {{ settings.background_color }};
+    background-color: {{ settings.background }};
     color: {{ settings.text_color }};
     font-size: {{ settings.font_size }}px;
     padding: 20px;

@@ -40,17 +40,24 @@
   {% endschema %}
   
   <style>
+    .custom-announcement-container {
+      display: grid;
+      place-items: center; /* Centers content both vertically and horizontally */
+      height: 100vh; /* Adjust as needed */
+    }
     .custom-announcement {
       padding: 20px;
       text-align: center;
     }
   </style>
   
-  <div class="custom-announcement" style="
+  <div class="custom-announcement-container" style="
     background-color: {{ settings.background_color }};
     color: {{ settings.text_color }};
     font-size: {{ settings.font_size }}px;
   ">
-    {{ settings.editable_text | escape }}
+    <div class="custom-announcement">
+      {{ settings.editable_text | escape }}
+    </div>
   </div>
   

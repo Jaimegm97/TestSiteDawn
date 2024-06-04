@@ -21,21 +21,15 @@
         "default": 16
       },
       {
-        "type": "text",
+        "type": "richtext",
         "id": "editable_text",
         "label": "Texto",
         "default": "Escriba aquí su texto"
-      },
-      {
-        "type": "checkbox",
-        "id": "bold_text",
-        "label": "Texto en negrita",
-        "default": false
       }
     ],
     "presets": [
       {
-        "name": "Custom Text Section",
+        "name": "Prueba Anuncio",
         "category": "Text"
       }
     ]
@@ -52,7 +46,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-weight: {{ settings.bold_text ? 'bold' : 'normal' }};
   ">
     {% if settings.bold_text %}
       <strong>{{ settings.editable_text }}</strong>

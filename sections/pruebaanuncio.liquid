@@ -22,9 +22,9 @@
       },
       {
         "type": "richtext",
-        "id": "paragraph",
+        "id": "editable_text",
         "label": "Texto",
-        "default": "Escriba aquí su texto"
+        "default": "<p>Escriba aquí su texto</p>"
       }
     ],
     "presets": [
@@ -34,22 +34,18 @@
       }
     ]
   }
-  {% endschema %}
-  
-  <div style="
-    background-color: {{ settings.background_color }};
-    color: {{ settings.text_color }};
-    font-size: {{ settings.font_size }}px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  ">
-    {% if settings.bold_text %}
-      <strong>{{ settings.editable_text }}</strong>
-    {% else %}
-      {{ settings.editable_text }}
-    {% endif %}
-  </div>
+{% endschema %}
+
+<div style="
+  background-color: {{ settings.background_color }};
+  color: {{ settings.text_color }};
+  font-size: {{ settings.font_size }}px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+">
+  {{ settings.editable_text | escape }}
+</div>

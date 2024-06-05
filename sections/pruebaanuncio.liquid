@@ -40,12 +40,12 @@
   {% endschema %}
   
   <div style="
-    background-color: {{ settings.background }};
-    color: {{ settings.text_color }};
-    font-size: {{ settings.font_size }}px;
+    background-color: {{ section.settings.background }};
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.font_size }}px;
     padding: 20px;
     text-align: center;
   ">
-    {{ settings.editable_text | escape }}
+    {{ section.settings.editable_text }}
   </div>
   
